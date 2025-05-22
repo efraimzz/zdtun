@@ -116,8 +116,10 @@ static zdtun_conn_t* data_out(zdtun_t *tun, const char *pkt_buf, int pkt_len) {
 
     return NULL;
   }
-
-  if((proxy_ipver != 0) && (pkt.tuple.ipproto == IPPROTO_TCP))
+//old
+ // if((proxy_ipver != 0) && (pkt.tuple.ipproto == IPPROTO_TCP))
+ //new
+  if(proxy_ipver != 0) 
     zdtun_conn_proxy(conn);
 
   if(zdtun_forward(tun, &pkt, conn) != 0) {
