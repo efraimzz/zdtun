@@ -401,7 +401,7 @@ socket_t zdtun_conn_get_socket(const zdtun_conn_t *conn) {
 
 void zdtun_conn_proxy(zdtun_conn_t *conn) {
   // NOTE: only TCP is currently supported
-  if(conn->tuple.ipproto == IPPROTO_TCP)
+//  if(conn->tuple.ipproto == IPPROTO_TCP)
     conn->proxy_mode = PROXY_SOCKS5;
 }
 
